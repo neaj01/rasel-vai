@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="crime-bg"></div> <!-- animated background layer -->
+    <div class="crime-bg"></div>
 
     <h1>🚨 WANTED 🚨</h1>
     <p>Rasel Vai — Amar theke 30 taka vagiye nise!</p>
@@ -20,5 +20,22 @@
     </div>
 
     <p class="warning">👀 Take dekhiba matro dhoriye din!</p>
+
+    <!-- 🔊 Sound control -->
+    <button id="playSound">🔈 Play Siren</button>
+
+    <!-- Siren sound file -->
+    <audio id="sirenSound" src="mp.mp3"></audio>
+
+    <script>
+        // যখন user বাটনে ক্লিক করবে, sound বাজবে
+        document.getElementById('playSound').addEventListener('click', function() {
+            const sound = document.getElementById('sirenSound');
+            sound.volume = 0.6; // ভলিউম সেট করো (0 = mute, 1 = full)
+            sound.loop = true;  // লুপে বাজবে
+            sound.play();
+            this.style.display = 'none'; // বাটন লুকাবে
+        });
+    </script>
 </body>
 </html>
